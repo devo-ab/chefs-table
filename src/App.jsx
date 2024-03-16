@@ -7,10 +7,11 @@ function App() {
 
   return (
     <>
-      <Header></Header>
-      <Banner></Banner>
-
-      
+      {/* <Header></Header>
+      <Banner></Banner> */}
+      <div>
+        
+      </div>
     </>
   )
 }
