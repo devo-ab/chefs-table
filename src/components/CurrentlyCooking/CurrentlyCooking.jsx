@@ -22,13 +22,13 @@ const CurrentlyCooking = ({cooking, totalTime, totalCalories}) => {
         <tbody>
             <tr className="text-[#282828B2]  bg-[#28282808] space-y-3">
             {cooking.map((cook, idx) => (
-              <CurrentlyCook key={idx} cook={cook}></CurrentlyCook>
+              <CurrentlyCook key={idx} idx={idx} cook={cook}></CurrentlyCook>
             ))}
             </tr>
         </tbody>
       </table>
 
-      <div className=" mt-12 w-[245px] flex gap-6 text-[#282828CC]">
+      <div className=" mt-12 w-[245px] flex gap-6 text-[#282828CC] mx-auto">
         <p>Total Times = {totalTime} minutes</p>
         <p>Total Calories = {totalCalories} calories</p>
       </div>

@@ -25,7 +25,7 @@ const Cooks = ({ cooks, handleAddToCooking, cooking, totalTime, totalCalories}) 
         <tbody>
           <tr className="text-[#282828B2]  bg-[#28282808] space-y-3">
             {cooks.map((cook, idx) => (
-              <Cook key={idx} cook={cook} handleAddToCooking={handleAddToCooking}></Cook>
+              <Cook key={idx} cook={cook} idx={idx} handleAddToCooking={handleAddToCooking}></Cook>
             ))}
           </tr>
         </tbody>

@@ -1,6 +1,6 @@
 import "./App.css";
-// import Header from "./components/Header/Header";
-// import Banner from "./components/Banner/Banner";
+import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
 import Recipes from "./components/Recipes/Recipes";
 import Cooks from "./components/Cooks/Cooks";
 import { useState } from "react";
@@ -13,14 +13,19 @@ function App() {
     console.log("clicked");
     const newCooks = [...cooks, recipe];
     setCooks(newCooks);
+    
   };
 
+
+
   const [cooking, setCooking] = useState([]);
-  const handleAddToCooking = (cook) => {
+  const handleAddToCooking = (cook, recipe_id) => {
     const newCooking = [...cooking, cook];
     setCooking(newCooking);
-    
-    
+    console.log(recipe_id)
+    const remainingCooks = cooks.filter(coook => coook.recipe_id !== recipe_id)
+    setCooks(remainingCooks);
+
     handleTotalTime(cook.preparing_time);
     handleTotalCalories(cook.calories)
   };
@@ -39,8 +44,8 @@ function App() {
 
   return (
     <>
-      {/* <Header></Header>
-      <Banner></Banner> */}
+      <Header></Header>
+      <Banner></Banner>
       <div>
         <div>
         <div>
