@@ -1,14 +1,29 @@
+import { useEffect, useState } from "react";
+import Recipe from "../Recipe/Recipe"
+import PropTypes from 'prop-types';
+
+const Recipes = ({handleAddToCook}) => {
+    const [recipes, setRecipes] = useState([]);
+    useEffect(() => {
+        fetch('recipes.json')
+        .then(res => res.json())
+        .then(data => setRecipes(data))
+    },[])
 
 
-const Recipes = () => {
     return (
         <div>
-            <div>
-            <h1 className="text-2xl lg:text-4xl font-semibold leading-10 text-center text-[#150B2B]">Our Recipes</h1>
-            <p className="text-[#878787] leading-6 text-center mt-5">Prepare to tantalize your taste buds with our exquisitely crafted recipe that promises to elevate <br />your dining experience to new heights of culinary delight!</p>
+            <div className="grid grid-cols-2 gap-10 mt-8 ">
+                {
+                    recipes.map(recipe => <Recipe handleAddToCook={handleAddToCook} key={recipe.recipe_id} recipe={recipe}></Recipe>)
+                }
             </div>
         </div>
     );
 };
+
+Recipes.propTypes ={
+    handleAddToCook: PropTypes.func.isRequired,
+  }
 
 export default Recipes;
