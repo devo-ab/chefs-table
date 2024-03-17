@@ -3,6 +3,8 @@ import Cook from "../Cook/Cook";
 import CurrentlyCooking from "../CurrentlyCooking/CurrentlyCooking"
 
 
+
+
 const Cooks = ({ cooks, handleAddToCooking, cooking, totalTime, totalCalories}) => {
   return (
     <div className="border border-[#28282833] rounded-2xl mt-8 w-[500px]">
@@ -26,6 +28,7 @@ const Cooks = ({ cooks, handleAddToCooking, cooking, totalTime, totalCalories}) 
           <tr className="text-[#282828B2]  bg-[#28282808] space-y-3">
             {cooks.map((cook, idx) => (
               <Cook key={idx} cook={cook} idx={idx} handleAddToCooking={handleAddToCooking}></Cook>
+              
             ))}
           </tr>
         </tbody>

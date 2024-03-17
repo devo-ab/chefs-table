@@ -4,15 +4,30 @@ import Banner from "./components/Banner/Banner";
 import Recipes from "./components/Recipes/Recipes";
 import Cooks from "./components/Cooks/Cooks";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function App() {
-
-
+  
   const [cooks, setCooks] = useState([]);
   const handleAddToCook = (recipe) => {
-    console.log("clicked");
-    const newCooks = [...cooks, recipe];
+
+    const isExist = cooks.find(item => item.recipe_id == recipe.recipe_id);
+    if(!isExist){
+      const newCooks = [...cooks, recipe];
     setCooks(newCooks);
+    }
+    else{
+      toast('Already in want to cook');
+      
+    }
+    
+
+    console.log("clicked");
+    
     
   };
 
@@ -20,6 +35,9 @@ function App() {
 
   const [cooking, setCooking] = useState([]);
   const handleAddToCooking = (cook, recipe_id) => {
+
+    
+
     const newCooking = [...cooking, cook];
     setCooking(newCooking);
     console.log(recipe_id)
@@ -58,7 +76,7 @@ function App() {
           </div>
         </div>
       </div>
-      
+      <ToastContainer />
     </>
   );
 }
