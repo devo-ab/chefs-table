@@ -10,7 +10,7 @@ const Cook = ({cook, idx, handleAddToCooking}) => {
             <td>{recipe_name}</td>
             <td >{preparing_time} minutes</td>
             <td>{calories} calories</td>
-            <td><button onClick={() => handleAddToCooking(cook, recipe_id)} className=" bg-[#0BE58A] border-none rounded-3xl text-[#150B2B] ">Preparing</button></td>
+            <td><button onClick={() => handleAddToCooking(cook, recipe_id)} className=" bg-[#0BE58A] border-none rounded-3xl text-[#150B2B] py-2 px-3">Preparing</button></td>
             
         </div>                              
     );

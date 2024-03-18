@@ -3,7 +3,7 @@ import { CiClock2 } from "react-icons/ci";
 import { AiOutlineFire } from "react-icons/ai";
 
 const Recipe = ({recipe, handleAddToCook}) => {
-  const {recipe_image, recipe_name, short_description, preparing_time, calories, ingredients, recipe_id} = recipe;
+  const {recipe_image, recipe_name, short_description, preparing_time, calories, ingredients} = recipe;
   return (
     <div>
       <div className="card w-96 bg-base-100  border border-[#28282833]">
