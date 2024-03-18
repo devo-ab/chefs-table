@@ -5,6 +5,7 @@ import Recipes from "./components/Recipes/Recipes";
 import Cooks from "./components/Cooks/Cooks";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Footer from "./components/Footer/Footer";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -77,6 +78,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
       <ToastContainer />
     </>
   );
